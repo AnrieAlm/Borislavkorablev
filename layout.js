@@ -1,7 +1,28 @@
+
+ const checkboxes = document.querySelectorAll('.navbar input[type="checkbox"]');
+    const items = document.querySelectorAll('.grid-item');
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const activeFilters = Array.from(checkboxes)
+          .filter(c => c.checked)
+          .map(c => c.value);
+
+        items.forEach(item => {
+          const category = item.dataset.category;
+          if (activeFilters.length === 0 || activeFilters.includes(category)) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
 // Make nav links active when clicked
 document.querySelectorAll('header nav ul li a').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
+  link.addEventListener('click', function () {
+   
 
     // Remove active from all links
     document.querySelectorAll('header nav ul li a').forEach(l => {
@@ -13,15 +34,17 @@ document.querySelectorAll('header nav ul li a').forEach(link => {
   });
 });
 
-// prettier-ignore
-const itemSizes = [
-  "2em", "3em", "1.6em", "4em", "3.2em",
-  "3em", "4.5em", "1em", "3.5em", "2.8em",
-];
-const items = document.querySelectorAll(".item");
-for (let i = 0; i < items.length; i++) {
-  items[i].style.blockSize = itemSizes[i];
-}
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll("nav ul li a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+
+
+
+
 
 //////// hamburger menu
 const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -40,3 +63,10 @@ document.querySelectorAll('.nav-links li a').forEach(link => {
     hamburgerMenu.classList.remove('active');
   });
 });
+
+
+
+// const items = document.querySelectorAll(".item"); //was commented because of repetition in declaring the same purpose for variable items
+for (let i = 0; i < items.length; i++) {
+  items[i].style.blockSize = itemSizes[i];
+}

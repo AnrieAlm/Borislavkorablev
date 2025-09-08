@@ -1,17 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with [Your Name], a Product Media Designer specializing in beer branding and packaging. Fill out the contact form or reach out via email or phone.">
-   
-  <title>Contact Me | Product Media Designer</title>
-  <style>
-
  /* Main Navigation Container */
 nav {
-  background-color: #111; /* Dark slate blue background */
+  background-color: #2c3e50; /* Dark slate blue background */
   color: #fff; /* White text */
   margin: 20px auto;
   padding: 0;
@@ -82,12 +71,12 @@ header nav ul li a.active::after {
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: #111;
+      color: #333;
       background-color: #f9f9f9;
     }
 
     header {
-      background: #111;
+      background: #2c3e50;
       color: #fff;
       text-align: center;
       padding: 40px 20px;
@@ -114,8 +103,8 @@ header nav ul li a.active::after {
     }
 
     h2 {
-      font-size: 1.8rem;
-      color: #111;
+      font-size: 1 rem;
+      color: #2c3e50;
       margin-bottom: 20px;
     }
 
@@ -142,7 +131,7 @@ header nav ul li a.active::after {
     }
 
     button {
-      background: #111;
+      background: #2c3e50;
       color: #fff;
       padding: 10px;
       border: none;
@@ -172,7 +161,7 @@ header nav ul li a.active::after {
     }
 
     footer {
-      background: #111;
+      background: #2c3e50;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -182,71 +171,3 @@ header nav ul li a.active::after {
     footer p {
       margin: 0;
     }
-  </style>
-</head>
-<body>
-
-  <!-- Header Section -->
-  <header>
-
-    
-    <nav>
-    <ul>
-        <li><a href="index.html" >Home</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="aboutus.html">About Me</a></li>
-    </ul>
-</nav>    
-
-    <h1>Contact Me</h1>
-    <p>Let’s collaborate on your next beer branding or design project!</p>
-  </header>
-
-  <!-- Main Content -->
-  <div class="container">
-
-    <!-- Contact Form Section -->
-    <section id="contact-form">
-      <h2>Send Me a Message</h2>
-      <form action="#" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <!-- Contact Information Section -->
-    <section id="contact-info">
-      <h2>Contact Information</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="korablev_bi@baltika.com">korablev_bi@baltika.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+353 87 337 2142">+353 87 337 2142</a></p>
-        <p><strong>Location:</strong> Dublin, Ireland</p>
-        <p><strong>Social Media:</strong></p>
-        <ul style="list-style: none; padding: 0;">
-          <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a></li>
-          <li><a href="https://www.behance.net/yourprofile" target="_blank">Behance</a></li>
-        </ul>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2023 [Your Name]. All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
