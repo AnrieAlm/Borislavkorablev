@@ -1,0 +1,54 @@
+<?php include 'header.php'; ?>
+
+<section id="start-info">
+    <ul>
+        <li><img class="hover-effect" src="logo.png" width="50" /></li>
+        <li><h1>BORISLAV KORABLEV</h1></li>
+    </ul>
+</section>
+
+<section id="slider-full">
+  <section class="write">
+    <div class="write-content"> 
+      <h2>Card Title</h2>
+      <p>This is the content of the card..</p>
+    </div>
+  </section>
+  <section class="slider">
+    <figure>
+      <img src="beer3.png" alt="Beer 3" />
+      <img src="beer4.png" alt="Beer 4" />
+    </figure>
+  </section>
+</section>
+
+<section id="categories">
+    <h1>Categories</h1>
+    <div class="navbar">
+      <label><input type="checkbox" value="digital"> Digital Design</label>
+      <label><input type="checkbox" value="packaging"> Packaging</label>
+      <label><input type="checkbox" value="editorial"> Editorial Design</label>
+      <label><input type="checkbox" value="prepress"> Pre-press</label>
+      <label><input type="checkbox" value="marketing"> Marketing & Advertising</label>
+      <label><input type="checkbox" value="print"> Print Design</label>
+      <label><input type="checkbox" value="illustration"> Illustration</label>
+      <label><input type="checkbox" value="typeface"> Typeface Design</label>
+    </div>
+</section>
+
+<section class="container">
+    <div class="grid-item">
+      <img src="beer.png" alt="Beer 1">
+      <span>Image 1</span>
+    </div>
+    <div class="grid-item">
+      <img src="beer4.png" alt="Beer 2">
+      <span>Image 2</span>
+    </div>
+    <div class="grid-item">
+      <img src="beer2.png" alt="Beer 3">
+      <span>Image 3</span>
+    </div>
+</section>
+
+<?php include 'footer.php'; ?>
