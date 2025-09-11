@@ -4,7 +4,7 @@ if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit();
 }
-include '../db.php';
+include 'db.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,18 +30,19 @@ include '../db.php';
     </tr>
     <?php
     $sql = "SELECT * FROM projects ORDER BY created_at DESC";
-    $stmt = $conn->prepare("SELECT * FROM projects ORDER BY created_at DESC");
+   $stmt = $pdo->prepare("SELECT * FROM projects ORDER BY created_at DESC");
 $stmt->execute();
-$result = $stmt->get_result();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC); // ← Use fetchAll for PDO
 
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-                <td>{$row['id']}</td>
-                <td>{$row['title']}</td>
-                <td>{$row['category']}</td>
-                <td><img src='../{$row['image']}' width='100'></td>
-                <td><a href='delete_project.php?id={$row['id']}' onclick='return confirm(\"Delete this project?\")'>Delete</a></td>
-              </tr>";
+foreach ($result as $row) {
+    echo "<tr>
+            <td>{$row['id']}</td>
+            <td>{$row['title']}</td>
+            <td>{$row['category']}</td>
+            <td><img src='../{$row['image']}' width='100'></td>
+            <td><a href='delete_project.php?id={$row['id']}' onclick='return confirm(\"Delete this project?\")'>Delete</a></td>
+          </tr>";
+
     }
     ?>
   </table>

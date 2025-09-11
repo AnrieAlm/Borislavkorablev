@@ -4,7 +4,7 @@ if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit();
 }
-include '../db.php';
+include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];

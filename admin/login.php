@@ -8,21 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username=?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");  // ← Use $pdo, not $conn
+    $stmt->execute([$username]);
+    $row = $stmt->fetch();
 
-    if ($row = $result->fetch_assoc()) {
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['admin'] = $username;
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            $error = "Invalid credentials!";
-        }
+    if ($row && password_verify($password, $row['password'])) {
+        $_SESSION['admin'] = $username;
+        header("Location: dashboard.php");
+        exit();
     } else {
-        $error = "Invalid credentials!";
+        header("Location: index.php?error=Invalid+credentials!");
+        exit();
     }
 }
 ?>

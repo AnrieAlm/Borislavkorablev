@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Get in touch with Borislav Korablev, a Product Media Designer specializing in beer branding and packaging. Fill out the contact form or reach out via email or phone.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
    
   <title>Contact Me | Product Media Designer</title>
   <style>
@@ -76,6 +79,95 @@ header nav ul li a.active::after {
   width: 100%; /* Full underline for active state */
 }
 
+
+/* Hamburger Menu ===================================================================*/
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+   z-index: 1001;    
+   position: absolute;
+    top: 15px;
+    right: 15px;
+
+
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+
+   
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.nav-links li a {
+  color:  #2c3e50;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 16px 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .nav-links {
+    display: none; /* Hide regular nav links */
+    flex-direction: column;
+    background-color: #f4f4f4;
+     z-index: 1000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 100px 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     /* Start hidden (off-screen to the left) */
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show nav links when active */
+     /* Slide in from left */
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    padding: 10px;
+  }
+}
+
     /* Basic Styling */
     body {
       font-family: 'Arial', sans-serif;
@@ -115,7 +207,7 @@ header nav ul li a.active::after {
 
     h2 {
       font-size: 1 rem;
-      color: #000;
+      color: #111;
       margin-bottom: 20px;
     }
 
@@ -206,12 +298,23 @@ header nav ul li a.active::after {
   <!-- Header Section -->
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.php" class="active">Contact</a></li>
-        <li><a href="aboutus.html">About Me</a></li>
-      </ul>
-    </nav>    
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+   <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="aboutus.php">About Me</a></li>
+            <?php if ($is_admin): ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="#" class="login-btn">Login</a></li>
+            <?php endif; ?>
+        </ul>
+</nav> 
 
     <h1>Contact Me</h1>
     <p>Let’s collaborate on your next beer branding or design project!</p>
@@ -270,11 +373,14 @@ header nav ul li a.active::after {
     </section>
 
   </div>
-
+<
   <!-- Footer -->
   <footer>
     <p>&copy; 2023 Borislav Korablev. All Rights Reserved.</p>
   </footer>
+
+
+<script src="layout.js"></script>
 
 </body>
 </html>

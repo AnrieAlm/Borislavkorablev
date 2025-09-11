@@ -21,12 +21,20 @@
             <span></span>
             <span></span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">Home</a></li>
-            <li><a href="contact.php" class="<?= basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : '' ?>">Contact</a></li>
-            <li><a href="about.php" class="<?= basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active' : '' ?>">About Me</a></li>
+
+          <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="aboutus.php">About Me</a></li>
+            <?php if ($is_admin): ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="#" class="login-btn">Login</a></li>
+            <?php endif; ?>
         </ul>
-    </nav>    
+    </nav>
+      
 </header>
 
 <main>

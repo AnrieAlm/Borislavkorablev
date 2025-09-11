@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 
+
 <section id="start-info">
     <ul>
         <li><img class="hover-effect" src="logo.png" width="50" /></li>
@@ -21,6 +22,22 @@
     </figure>
   </section>
 </section>
+<section id="slider-full2">
+  <section class="write">
+    <div class="write-content"> 
+      <h2>Card Title</h2><br>
+      <p>This is the content of the card..</p>
+    </div>
+  </section>
+  <section class="slider reverse">
+    <figure>
+      <img src="beer3.png" alt="Beer 3" />
+      <img src="beer4.png" alt="Beer 4" />
+    </figure>
+  </section>
+</section>
+
+
 
 <section id="categories">
     <h1>Categories</h1>
@@ -74,5 +91,22 @@
     </div>
 
 </section>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Admin Login</h2>
+    <form method="POST" action="login.php">
+      <label>Username</label>
+      <input type="text" name="username" required>
 
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginError" style="color: red; margin-top: 10px;"></p>
+  </div>
+</div>
+<script src="layout.js"></script>
 <?php include 'footer.php'; ?>
