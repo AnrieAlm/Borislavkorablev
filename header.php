@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 // header.php
 ?>
 <!DOCTYPE html>
@@ -26,7 +30,7 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="aboutus.php">About Me</a></li>
-            <?php if ($is_admin): ?>
+             <?php if (isset($_SESSION['user'])): ?>
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="logout.php">Logout</a></li>
             <?php else: ?>

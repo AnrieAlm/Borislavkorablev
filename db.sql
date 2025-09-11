@@ -1,6 +1,6 @@
-CREATE DATABASE portfolio2_db;
+CREATE DATABASE portfolio_db1;
 
-USE portfolio2_db;
+USE portfolio_db1;
 
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,7 +18,7 @@ INSERT INTO projects (title, category, description, image) VALUES
 ('Social Media Ad', 'marketing', 'Instagram ad campaign', 'beer4.png');
 
 
-USE portfolio2_db;
+USE portfolio_db1;
 
 CREATE TABLE contact_submissions (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -29,7 +29,7 @@ CREATE TABLE contact_submissions (
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-USE portfolio2_db;
+USE portfolio_db1;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,

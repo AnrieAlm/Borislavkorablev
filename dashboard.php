@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
-    header("Location: login.php");
+if (!isset($_SESSION['user'])) {
+    header("Location: index.php?error=Please+login+first");
     exit();
 }
+
 include 'db.php';
 ?>
 
@@ -15,7 +16,9 @@ include 'db.php';
   <link rel="stylesheet" href="../style2.css">
 </head>
 <body>
-  <h1>Welcome, <?php echo $_SESSION['admin']; ?>!</h1>
+
+<h1>Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?>!</h1>
+
   <a href="add_project.php">+ Add New Project</a> | 
   <a href="logout.php">Logout</a>
 

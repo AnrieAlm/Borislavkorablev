@@ -75,39 +75,34 @@ document.querySelectorAll('.nav-links li a').forEach(link => {
 // =============================
 // Login
 // =============================
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Create login button and add to header
-    const headerNav = document.querySelector("header nav ul");
-    if (headerNav) {
-        const loginBtn = document.createElement("li");
-        loginBtn.innerHTML = '<a href="#" class="login-btn">Login</a>';
-        headerNav.appendChild(loginBtn);
+    const modal = document.getElementById("loginModal");
+    const loginTrigger = document.querySelector(".login-btn");
+    const closeBtn = document.querySelector(".close");
 
-        // Open modal when clicked
-        loginBtn.addEventListener("click", function(e) {
+    if (loginTrigger) {
+        loginTrigger.addEventListener("click", function(e) {
+            // prevent default link behavior
             e.preventDefault();
-            document.getElementById("loginModal").style.display = "block";
+            modal.style.display = "block";
         });
     }
 
-    // Close modal when clicking X
-    document.querySelector(".close").onclick = function() {
-        document.getElementById("loginModal").style.display = "none";
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
     }
 
-    // Close modal when clicking outside
     window.onclick = function(event) {
-        const modal = document.getElementById("loginModal");
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 
-    // Optional: Show error if redirected back
+    // Show error if redirected back
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('error')) {
         document.getElementById("loginError").innerText = urlParams.get('error');
-        document.getElementById("loginModal").style.display = "block";
+        modal.style.display = "block";
     }
 });
+

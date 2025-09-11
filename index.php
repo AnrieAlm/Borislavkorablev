@@ -99,13 +99,13 @@
     <form method="POST" action="login.php">
       <label>Username</label>
       <input type="text" name="username" required>
-
+<br><br>
       <label>Password</label>
       <input type="password" name="password" required>
-
-      <button type="submit">Login</button>
+<br><br>
+      <button type="submit" class="login-btn">Login</button>
     </form>
-    <p id="loginError" style="color: red; margin-top: 10px;"></p>
+    <p id="loginError" style="color: red; margin-top: 15px;"></p>
   </div>
 </div>
 <script src="layout.js"></script>
