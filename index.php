@@ -49,6 +49,30 @@
       <img src="beer2.png" alt="Beer 3">
       <span>Image 3</span>
     </div>
+
+    <!-- Image 4: Full height, Column 3 -->
+    <div class="grid-item ">
+      <img src="beer2.png" alt="Beer 4">
+      <span>Image 4</span>
+    </div>
+
+    <!-- Image 5: Row 1, Column 4 -->
+    <div class="grid-item ">
+      <img src="beer.png" alt="Beer 5">
+      <span>Image 5</span>
+    </div>
+
+    <!-- Image 6: Row 2, Column 4 -->
+    <div class="grid-item ">
+      <img src="beer4.png" alt="Beer 6">
+      <span>Image 6</span>
+    </div>
+      <!-- Image 7: Row 2, Column 2 -->
+    <div class="grid-item ">
+      <img src="beer4.png" alt="Beer 7">
+      <span>Image 7</span>
+    </div>
+
 </section>
 
 <?php include 'footer.php'; ?>

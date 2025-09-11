@@ -1,6 +1,6 @@
-CREATE DATABASE portfolio_db;
+CREATE DATABASE portfolio2_db;
 
-USE portfolio_db;
+USE portfolio2_db;
 
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,3 +16,27 @@ INSERT INTO projects (title, category, description, image) VALUES
 ('Branding Mockup', 'digital', 'Brand identity for brewery', 'beer2.png'),
 ('Packaging Concept', 'packaging', 'Bottle and can packaging design', 'beer3.png'),
 ('Social Media Ad', 'marketing', 'Instagram ad campaign', 'beer4.png');
+
+
+USE portfolio2_db;
+
+CREATE TABLE contact_submissions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+USE portfolio2_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Insert admin user (password: 'password' - change this!)
+INSERT INTO users (username, password) VALUES 
+('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');

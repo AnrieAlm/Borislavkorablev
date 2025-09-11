@@ -30,7 +30,9 @@ include '../db.php';
     </tr>
     <?php
     $sql = "SELECT * FROM projects ORDER BY created_at DESC";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT * FROM projects ORDER BY created_at DESC");
+$stmt->execute();
+$result = $stmt->get_result();
 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>

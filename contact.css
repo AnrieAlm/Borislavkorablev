@@ -1,6 +1,6 @@
  /* Main Navigation Container */
 nav {
-  background-color: #2c3e50; /* Dark slate blue background */
+  background-color: #000; /* Dark slate blue background */
   color: #fff; /* White text */
   margin: 20px auto;
   padding: 0;
@@ -71,12 +71,12 @@ header nav ul li a.active::after {
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #000;
       background-color: #f9f9f9;
     }
 
     header {
-      background: #2c3e50;
+      background: #000;
       color: #fff;
       text-align: center;
       padding: 40px 20px;
@@ -104,7 +104,7 @@ header nav ul li a.active::after {
 
     h2 {
       font-size: 1 rem;
-      color: #2c3e50;
+      color: #0000;
       margin-bottom: 20px;
     }
 
@@ -131,7 +131,7 @@ header nav ul li a.active::after {
     }
 
     button {
-      background: #2c3e50;
+      background: #0000;
       color: #fff;
       padding: 10px;
       border: none;
@@ -161,7 +161,7 @@ header nav ul li a.active::after {
     }
 
     footer {
-      background: #2c3e50;
+      background: #000;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -170,4 +170,21 @@ header nav ul li a.active::after {
 
     footer p {
       margin: 0;
+    }
+
+    /* Alert Messages */
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
     }
